@@ -1,6 +1,7 @@
 import React from 'react'
 import Landing from '../components/Landing'
 import Card from '../components/Card'
+import { Link } from 'react-router-dom';
 import headphone from '../assets/headphone.png';
 import iphone from '../assets/iphone.png';
 import samsung from '../assets/samsung.png';
@@ -62,6 +63,7 @@ const Layout = () => {
             title: "Headphones",
             badge: "Featured",
             description: "High quality wireless headphones.",
+           
           },
           {
             image: iphone,
@@ -92,8 +94,11 @@ const Layout = () => {
             title={card.title}
             badge={card.badge}
             description={card.description}
+           
           >
-            <button className="btn btn-primary">Buy Now</button>
+            <Link to="/products">
+              <button className="btn btn-primary">Buy Now</button>
+            </Link>
           </Card>
         ))}
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import brandBackground from "../assets/SmartDot.jpg";
 import { TbClock24, TbTruckDelivery } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -16,7 +17,9 @@ const Landing = () => {
           <p>Top gadgets, great prices — the best deals in town, guaranteed</p>
         </div>
         {/* ===== Button Section Start ===== */}
-        <button className="landing-btn block mx-auto mt-10">Shop Now</button>
+        <Link to="/products">
+          <button className="landing-btn block mx-auto mt-10">Shop Now</button>
+        </Link>
         {/* ===== Footer Section Start ===== */}
         <div className="landing-footer flex items-center justify-between ">
           <div className="flex items-center gap-2 justify-center ">

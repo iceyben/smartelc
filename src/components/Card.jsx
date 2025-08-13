@@ -9,7 +9,7 @@ const Card = ({
   children,
 }) => {
   return (
-  <div className="card bg-gray-500 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg shadow-sm mb-10 ">
+  <div className="card bg-gray-500 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg shadow-sm  ">
       <figure>
         <img src={image} alt={alt} className='h-70  '/>
       </figure>
