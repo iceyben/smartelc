@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+body{
+   background-color: #293829;
+}
+
+.landing-section {
+  position: relative;
+  height: 40rem;
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+.landing-footer {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.5rem;
+  z-index: 10;
+  height: 4.5rem;
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+ }
+
+ .landing-content {
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-title {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  height: 2.5rem; /* Adjust as needed for your design */
+  display: flex;
+  align-items: center;
+}
+
+
+.landing-btn-wrapper {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-btn {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  background-color: #16a34a;
+  padding: 0.5rem 3rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.landing-btn:hover {
+  background-color: #15803d;
+}
+
+.landing-content>p{
+    color: #fff;
+}
