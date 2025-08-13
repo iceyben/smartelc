@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../components/firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
@@ -21,7 +22,18 @@ const Login = () => {
       setSuccess("Login successful! Redirecting to dashboard...");
       setTimeout(() => navigate("/dashboard"), 1500);
     } catch (err) {
-      setError(err.message);
+      // Custom error message for wrong credentials
+      if (
+        err.code === "auth/wrong-password" ||
+        err.code === "auth/user-not-found" ||
+        err.code === "auth/invalid-credential"
+      ) {
+        setError("Incorrect email or password. Please try again.");
+      } else if (err.code === "auth/too-many-requests") {
+        setError("Too many failed attempts. Please try again later or reset your password.");
+      } else {
+        setError("Login failed. Please check your details and try again.");
+      }
     } finally {
       setLoading(false);
     }
@@ -41,7 +53,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen w-full">
+    <div className="flex items-center justify-center min-h-180 md:min-h-screen w-full">
       <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg border px-4 py-10 mx-2 sm:mx-auto">
         <legend className="fieldset-legend text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">Login</legend>
 
@@ -86,7 +98,7 @@ const Login = () => {
         <button type="button" onClick={handleGoogleLogin} className="btn btn-outline btn-primary mt-2 w-full text-base sm:text-lg md:text-xl py-2">Login with Google</button>
 
         <div className="flex justify-between mt-4 text-sm sm:text-base md:text-lg">
-          <a href="/signup" className="link link-primary">Sign up</a>
+          <Link to="/register" className="link link-primary">Sign up</Link>
           <a href="/forgot-password" className="link link-secondary">Forgot password?</a>
         </div>
       </fieldset>

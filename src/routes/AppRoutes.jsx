@@ -4,6 +4,7 @@ import Layout from '../ui/Layout';
 import Login from '../pages/Login';
 import Products from '../components/Products';
 import Dashboard from '../pages/Dashboard';
+import Register from '../pages/Register';
 // import other pages/components as needed
 
 const AppRoutes = () => (
@@ -12,6 +13,7 @@ const AppRoutes = () => (
   <Route path="/login" element={<Login />} />
   <Route path="/products" element={<Products />} />
   <Route path="/dashboard" element={<Dashboard />} />
+  <Route path="/register" element={<Register />} />
   </Routes>
 );
 
